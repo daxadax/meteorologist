@@ -1,0 +1,17 @@
+GEM
+  remote: http://www.rubygems.org/
+  specs:
+    minitest (5.10.1)
+    rack (2.0.1)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
+  rack-test
+
+BUNDLED WITH
+   1.14.4
