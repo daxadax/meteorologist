@@ -24,7 +24,7 @@ location coordinates and limit calls made to the Google Maps API:
 
 ```
 options = {
-  units: 'si', # defaults to 'si' (metric). See [Darksky documentation](https://darksky.net/dev/docs/forecast) for other options  
+  units: 'si', # default
 }
 weatherman = Meteorologist.new("berlin")
 
@@ -36,7 +36,17 @@ weatherman.forecast.methods
 :current_humidity, :todays_summary, :sunrise, :sunset, :moon_phase,
 :minimum_temperature, :apparent_minimum_temperature, :maximum_temperature,
 :apparent_maximum_temperature]
+
+weatherman.moon
+=> nil
 ```
+
+####Options
+
+The `units` option defaults to `'si'`, which is metric units.  For the full list
+of other available units, please see the [Darksky documentation](https://darksky.net/dev/docs/forecast)  
+
+####Methods
 
 Most of the `forecast` methods are self-explanatory.  
 
@@ -46,12 +56,7 @@ for the forecasted location, so they should be adjusted to local time.
 The `moon_phase` returns Darksky's phase estimation which does what it says on
 the tin, but is not terribly helpful.  It's literally the percent of the cycle
 complete - so 0% is the new moon, 50% is the full moon and 100% is the next new
-moon.
+moon.  
 
-```
-weatherman.moon
-=> nil
-```
-
-This is not yet implemented but it will include some helpers related to moon
-information, such as phase name, illumination, and associated elements.
+The `moon` method is not yet implemented but it will include some helpers related 
+to moon information, such as phase name, illumination, and associated elements.
