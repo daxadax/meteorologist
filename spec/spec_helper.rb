@@ -47,6 +47,12 @@ class BaseSpec < Minitest::Spec
     end
   end
 
+  class FakeMoonInfo
+    def initialize(moon_phase)
+      @moon_phase = moon_phase
+    end
+  end
+
   class FakeLocator
     def initialize(location, options)
       raise ArgumentError, "Location not found" if location == 'unknown'

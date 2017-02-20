@@ -1,6 +1,6 @@
 class Forecaster
   require 'json'
-  DARKSKY_URL = "https://api.darksky.net/forecast/#{ENV['DARKSKYSECRET']}"
+  DARKSKY_URL = "https://api.darksky.net/forecast"
 
   def initialize(coordinates, units, forecast_time, options = {})
     data = options.fetch(:data) { get_data(coordinates, units, forecast_time) }
@@ -59,8 +59,8 @@ class Forecaster
   attr_reader :forecast
 
   def get_data(coordinates, units, forecast_time)
-    timestamp = forecast_time.to_i
-    url = "#{DARKSKY_URL}/#{coordinates},#{timestamp}?units=#{units}"
+    time = forecast_time.to_i
+    url = "#{DARKSKY_URL}/#{ENV['DARKSKYSECRET']}/#{coordinates},#{time}?units=#{units}"
 
     `curl -s #{url}`
   end

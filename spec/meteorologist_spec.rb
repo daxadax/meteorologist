@@ -5,6 +5,7 @@ class MeteorologistSpec < BaseSpec
     {
       forecaster: FakeForecaster,
       navigator: FakeNavigator,
+      moon_info: FakeMoonInfo,
       forecast_time: Time.utc(2017,1,23,17)
     }
   end
@@ -13,6 +14,10 @@ class MeteorologistSpec < BaseSpec
 
   it 'returns an instance of Forecaster when forecast is called' do
     assert_kind_of FakeForecaster, result.forecast
+  end
+
+  it 'returns an instance of MoonInfo when moon is called' do
+    assert_kind_of FakeMoonInfo, result.moon
   end
 
   it 'defaults units to standard imperial' do
