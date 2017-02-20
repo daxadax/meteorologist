@@ -23,6 +23,9 @@ location coordinates and limit calls made to the Google Maps API:
 ##Use
 
 ```
+options = {
+  units: 'si', # defaults to 'si' (metric). See [Darksky documentation](https://darksky.net/dev/docs/forecast) for other options  
+}
 weatherman = Meteorologist.new("berlin")
 
 weatherman.location_name

@@ -9,7 +9,7 @@ class Meteorologist
     #@time = options.fetch(:forecast_time) { Time.now }
     @forecaster_class = options.fetch(:forecaster) { Forecaster }
     @navigator_class = options.fetch(:navigator) { Navigator }
-    @units = options.fetch(:units) { 'si' }
+    @units = options.fetch(:units) { 'si' } # or 'us' for Imperial units
   end
 
   def forecast
