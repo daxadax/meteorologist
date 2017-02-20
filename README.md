@@ -38,8 +38,8 @@ weatherman.forecast.methods
 :minimum_temperature, :apparent_minimum_temperature, :maximum_temperature,
 :apparent_maximum_temperature]
 
-weatherman.moon
-=> nil
+weatherman.moon.methods
+=> [:illumination, :waxing?, :waning?, :phase_name, :active_elements]
 ```
 
 ####Options
@@ -62,5 +62,10 @@ the tin, but is not terribly helpful.  It's literally the percent of the cycle
 complete - so 0% is the new moon, 50% is the full moon and 100% is the next new
 moon.  
 
-The `moon` method is not yet implemented but it will include some helpers related 
-to moon information, such as phase name, illumination, and associated elements.
+The `moon` method returns some helpers related to moon information:  
+ * `illumination` - percent of the moon which is illuminated  
+ * `waxing?`/`waning?` - boolean if the moon is waxing or waning  
+ * `phase_name` - string value of the moon's current phase (new, crescent,
+   first quarter, etc)  
+ * `active_elements` - array of astrological elements related to the current moon phase. In the case of two elements, a transition is being made from the first element to the last.
+
