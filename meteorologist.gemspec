@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'meteorologist'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2017-02-18'
   s.summary     = "Get the weather for a place and time"
   s.description = "Get the weather for a place and time"
