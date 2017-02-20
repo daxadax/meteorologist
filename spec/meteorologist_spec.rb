@@ -4,7 +4,8 @@ class MeteorologistSpec < BaseSpec
   let(:options) do
     {
       forecaster: FakeForecaster,
-      navigator: FakeNavigator
+      navigator: FakeNavigator,
+      forecast_time: Time.utc(2017,1,23,17)
     }
   end
   let(:result) { Meteorologist.new(forecast_location, options) }
@@ -16,6 +17,10 @@ class MeteorologistSpec < BaseSpec
 
   it 'defaults units to standard imperial' do
     assert_equal 'si', result.forecast.units
+  end
+
+  it 'accepts a forecast_time to get historic data' do
+    assert_equal options[:forecast_time], result.send(:forecast_time)
   end
 
   it 'uses coordinates returned by the navigator' do

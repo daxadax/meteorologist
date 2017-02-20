@@ -1,9 +1,9 @@
 class Forecaster
   require 'json'
-  DARKSKY_URL = 'https://api.darksky.net/forecast'
+  DARKSKY_URL = "https://api.darksky.net/forecast/#{ENV['DARKSKYSECRET']}"
 
-  def initialize(coordinates, units, options = {})
-    data = options.fetch(:data) { get_data(coordinates, units) }
+  def initialize(coordinates, units, forecast_time, options = {})
+    data = options.fetch(:data) { get_data(coordinates, units, forecast_time) }
     @forecast = validate_and_parse(data)
   end
 
@@ -58,8 +58,11 @@ class Forecaster
   private
   attr_reader :forecast
 
-  def get_data(coordinates, units)
-    `curl -s "#{DARKSKY_URL}/#{ENV['DARKSKYSECRET']}/#{coordinates}?units=#{units}"`
+  def get_data(coordinates, units, forecast_time)
+    timestamp = forecast_time.to_i
+    url = "#{DARKSKY_URL}/#{coordinates},#{timestamp}?units=#{units}"
+
+    `curl -s #{url}`
   end
 
   def validate_and_parse(forecast)

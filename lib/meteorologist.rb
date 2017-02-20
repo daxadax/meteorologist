@@ -5,15 +5,14 @@ class Meteorologist
     validate_environment
 
     @location = location
-    #todo allow forecast at a given time
-    #@time = options.fetch(:forecast_time) { Time.now }
     @forecaster_class = options.fetch(:forecaster) { Forecaster }
     @navigator_class = options.fetch(:navigator) { Navigator }
+    @forecast_time = options.fetch(:forecast_time) { Time.now }
     @units = options.fetch(:units) { 'si' } # or 'us' for Imperial units
   end
 
   def forecast
-    @forecast ||= @forecaster_class.new(coordinates, units)
+    @forecast ||= @forecaster_class.new(coordinates, units, forecast_time)
   end
 
   def moon
@@ -25,7 +24,7 @@ class Meteorologist
   end
 
   private
-  attr_reader :location, :units
+  attr_reader :location, :forecast_time, :units
 
   def coordinates
     navigator.coordinates

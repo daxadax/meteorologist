@@ -25,6 +25,7 @@ location coordinates and limit calls made to the Google Maps API:
 ```
 options = {
   units: 'si', # default
+  forecast_time: Time.new(2016, 2, 23) # defaults to Time.now
 }
 weatherman = Meteorologist.new("berlin")
 
@@ -45,6 +46,9 @@ weatherman.moon
 
 The `units` option defaults to `'si'`, which is metric units.  For the full list
 of other available units, please see the [Darksky documentation](https://darksky.net/dev/docs/forecast)  
+
+The `forecast_time` option can be used to get historical forecast data. It 
+defaults to `Time.now`.  
 
 ####Methods
 

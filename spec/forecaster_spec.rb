@@ -3,10 +3,13 @@ require_relative 'spec_helper'
 class ForecasterSpec < BaseSpec
   let(:coordinates) { '23,666' }
   let(:units) { 'si' }
+  let(:forecast_time) { Time.utc(2017,02,15) }
   let(:options) do
-    { data: data }
+    {
+      data: data
+    }
   end
-  let(:forecast) { Forecaster.new(coordinates, units, options) }
+  let(:forecast) { Forecaster.new(coordinates, units, forecast_time, options) }
 
   describe 'when the location is found' do
     let(:forecast_location) { 'queens' }
@@ -19,11 +22,11 @@ class ForecasterSpec < BaseSpec
       assert_equal '42%',   forecast.current_humidity
 
       assert_equal('Mostly cloudy starting in the evening.', forecast.todays_summary)
-      assert_equal(0.53, forecast.moon_phase)
-      assert_equal(-0.25,       forecast.minimum_temperature)
-      assert_equal(-4.63,       forecast.apparent_minimum_temperature)
-      assert_equal(6.13,        forecast.maximum_temperature)
-      assert_equal(3.31,        forecast.apparent_maximum_temperature)
+      assert_equal(0.53,  forecast.moon_phase)
+      assert_equal(-0.25, forecast.minimum_temperature)
+      assert_equal(-4.63, forecast.apparent_minimum_temperature)
+      assert_equal(6.13,  forecast.maximum_temperature)
+      assert_equal(3.31,  forecast.apparent_maximum_temperature)
     end
 
     it 'adjusts times from GMT to the location\'s timezone' do

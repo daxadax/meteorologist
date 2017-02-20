@@ -21,9 +21,10 @@ class BaseSpec < Minitest::Spec
   end
 
   class FakeForecaster
-    attr_reader :coordinates, :units
-    def initialize(coordinates, units)
+    attr_reader :coordinates, :units, :forecast_time
+    def initialize(coordinates, units, forecast_time)
       @coordinates = coordinates
+      @forecast_time = forecast_time
       @units = units
     end
 
