@@ -12,7 +12,7 @@ and then `require 'meteorologist'` where necessary
 
 You **MUST** provide the following environment variables:  
 
-`DARKSKYSECRET`   - secret key for your [Darksky API account](https://darksky.net/dev)
+`DARKSKYSECRET`   - secret key for your [Darksky API account](https://darksky.net/dev)  
 `GOOGLEMAPSECRET` - secret key for your [Google Maps API account](https://developers.google.com/maps/)
 
 You can optionally set a cache path - this will be used to cache searched
@@ -37,12 +37,12 @@ weatherman.forecast.methods
 
 Most of the `forecast` methods are self-explanatory.  
 
-Both `sunrise` and `sunset` take into account the time offset given by Darksky  
+Both `sunrise` and `sunset` take into account the time offset given by Darksky
 for the forecasted location, so they should be adjusted to local time.  
 
-The `moon_phase` returns Darksky's phase estimation which does what it says on  
-the tin, but is not terribly helpful.  It's literally the percent of the cycle  
-complete - so 0% is the new moon, 50% is the full moon and 100% is the next new  
+The `moon_phase` returns Darksky's phase estimation which does what it says on
+the tin, but is not terribly helpful.  It's literally the percent of the cycle
+complete - so 0% is the new moon, 50% is the full moon and 100% is the next new
 moon.
 
 ```
