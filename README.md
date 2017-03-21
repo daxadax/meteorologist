@@ -1,6 +1,6 @@
-#METEOROLOGIST
+# METEOROLOGIST
 
-##Installation
+## Installation
 
 simply `gem install 'meteorologist'` or, in your Gemfile:
 
@@ -8,7 +8,7 @@ simply `gem install 'meteorologist'` or, in your Gemfile:
 
 and then `require 'meteorologist'` where necessary
 
-##Set up
+## Set up
 
 You **MUST** provide the following environment variables:  
 
@@ -20,7 +20,7 @@ location coordinates and limit calls made to the Google Maps API:
 
 `CACHE_PATH`      - path to YAML file used for location cache
 
-##Use
+## Use
 
 ```
 options = {
@@ -42,7 +42,7 @@ weatherman.moon.methods
 => [:illumination, :waxing?, :waning?, :phase_name, :active_elements]
 ```
 
-####Options
+#### Options
 
 The `units` option defaults to `'si'`, which is metric units.  For the full list
 of other available units, please see the [Darksky documentation](https://darksky.net/dev/docs/forecast)  
@@ -50,7 +50,7 @@ of other available units, please see the [Darksky documentation](https://darksky
 The `forecast_time` option can be used to get historical forecast data. It 
 defaults to `Time.now`.  
 
-####Methods
+#### Methods
 
 Most of the `forecast` methods are self-explanatory.  
 
