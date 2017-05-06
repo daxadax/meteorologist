@@ -39,7 +39,7 @@ weatherman.forecast.methods
 :apparent_maximum_temperature]
 
 weatherman.moon.methods
-=> [:illumination, :waxing?, :waning?, :phase_name, :active_elements]
+=> [:illumination, :waxing?, :waning?, :phase_name, :emoji, :active_elements]
 ```
 
 ####Options
@@ -67,5 +67,6 @@ The `moon` method returns some helpers related to moon information:
  * `waxing?`/`waning?` - boolean if the moon is waxing or waning  
  * `phase_name` - string value of the moon's current phase (new, crescent,
    first quarter, etc)  
+ * `emoji` - emoji of the current moon phase ^_^  
  * `active_elements` - array of astrological elements related to the current moon phase. In the case of two elements, a transition is being made from the first element to the last.
 
