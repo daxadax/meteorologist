@@ -52,15 +52,15 @@ class MoonInfo
   end
 
   def crescent?
-    cycle_completion.between?(0.02,0.17) || cycle_completion.between?(0.83,0.98)
+    cycle_completion.between?(0.02,0.23) || cycle_completion.between?(0.77,0.98)
   end
 
   def quarter?
-    cycle_completion.between?(0.18,0.32) || cycle_completion.between?(0.68,0.82)
+    cycle_completion.between?(0.24,0.26) || cycle_completion.between?(0.74,0.76)
   end
 
   def gibbous?
-    cycle_completion.between?(0.33,0.48) || cycle_completion.between?(0.52,0.67)
+    cycle_completion.between?(0.27,0.48) || cycle_completion.between?(0.52,0.73)
   end
 
   def full?
