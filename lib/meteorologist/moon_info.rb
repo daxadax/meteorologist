@@ -3,6 +3,17 @@ class MoonInfo
   # where a 'new' moon is 0 (0.99, 0, and 0.01)
   # and a 'full' moon is 0.5 (0.49 - 0.51)
 
+  EMOJI = {
+    'new'           => '🌑',
+    'crescent'      => '🌒',
+    'first quarter' => '🌓',
+    'gibbous'       => '🌔',
+    'full'          => '🌕',
+    'disseminating' => '🌖',
+    'last quarter'  => '🌗',
+    'balsamic'      => '🌘'
+  }.freeze
+
   def initialize(cycle_completion)
     @cycle_completion = cycle_completion
   end
@@ -43,6 +54,11 @@ class MoonInfo
   def active_elements
     @active_elements ||= build_active_elements
   end
+
+  def emoji
+    EMOJI[phase_name]
+  end
+
 
   private
   attr_reader :cycle_completion

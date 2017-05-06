@@ -17,6 +17,7 @@ class MoonInfoSpec < BaseSpec
       assert_equal false, moon.waxing?
       assert_equal false, moon.waning?
       assert_equal ['water'], moon.active_elements
+      assert_equal '🌑', moon.emoji
     end
   end
 
@@ -30,6 +31,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal true, moon.waxing?
         assert_equal false, moon.waning?
         assert_equal ['water', 'earth'], moon.active_elements
+        assert_equal '🌒', moon.emoji
       end
     end
 
@@ -42,6 +44,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal true, moon.waxing?
         assert_equal false, moon.waning?
         assert_equal ['earth'], moon.active_elements
+        assert_equal '🌓', moon.emoji
       end
     end
 
@@ -54,6 +57,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal true, moon.waxing?
         assert_equal false, moon.waning?
         assert_equal ['earth', 'fire'], moon.active_elements
+        assert_equal '🌔', moon.emoji
       end
     end
   end
@@ -67,6 +71,7 @@ class MoonInfoSpec < BaseSpec
       assert_equal false, moon.waxing?
       assert_equal false, moon.waning?
       assert_equal ['fire'], moon.active_elements
+      assert_equal '🌕', moon.emoji
     end
   end
 
@@ -80,6 +85,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal false, moon.waxing?
         assert_equal true, moon.waning?
         assert_equal ['fire', 'air'], moon.active_elements
+        assert_equal '🌖', moon.emoji
       end
     end
 
@@ -92,6 +98,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal false, moon.waxing?
         assert_equal true, moon.waning?
         assert_equal ['air'], moon.active_elements
+        assert_equal '🌗', moon.emoji
       end
     end
 
@@ -104,6 +111,7 @@ class MoonInfoSpec < BaseSpec
         assert_equal false, moon.waxing?
         assert_equal true, moon.waning?
         assert_equal ['air', 'water'], moon.active_elements
+        assert_equal '🌘', moon.emoji
       end
     end
   end
