@@ -52,6 +52,7 @@ class MoonInfo
   end
 
   def active_elements
+    return []
     @active_elements ||= build_active_elements
   end
 
@@ -83,22 +84,22 @@ class MoonInfo
     cycle_completion.between?(0.49,0.51)
   end
 
-  def build_active_elements
-    return ['water'] if new?
-    return ['fire'] if full?
+  #def build_active_elements
+  #  return ['water'] if new?
+  #  return ['fire'] if full?
 
-    elements = Array.new
+  #  elements = Array.new
 
-    if waxing?
-      elements.push('earth')
-      elements.push('fire') if gibbous?
-      elements.unshift('water') if crescent?
-    else
-      elements.push('air')
-      elements.push('water') if crescent?
-      elements.unshift('fire') if gibbous?
-    end
+  #  if waxing?
+  #    elements.push('earth')
+  #    elements.push('fire') if gibbous?
+  #    elements.unshift('water') if crescent?
+  #  else
+  #    elements.push('air')
+  #    elements.push('water') if crescent?
+  #    elements.unshift('fire') if gibbous?
+  #  end
 
-    elements
-  end
+  #  elements
+  #end
 end
