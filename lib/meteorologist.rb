@@ -1,4 +1,4 @@
-Dir.glob(File.expand_path('meteorologist/*.rb', __FILE__)) { |f| require f }
+Dir.glob(File.expand_path('../meteorologist/*.rb', __FILE__)) { |f| require f }
 
 class Meteorologist
   def initialize(location, options = {})
