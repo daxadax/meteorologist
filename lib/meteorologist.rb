@@ -5,9 +5,9 @@ class Meteorologist
     validate_environment
 
     @location = location
-    @forecaster_class = options.fetch(:forecaster) { Forecaster }
-    @navigator_class = options.fetch(:navigator) { Navigator }
-    @moon_info_class = options.fetch(:moon_info) { MoonInfo }
+    @forecaster_class = options.fetch(:forecaster) { ::Forecaster }
+    @navigator_class = options.fetch(:navigator) { ::Navigator }
+    @moon_info_class = options.fetch(:moon_info) { ::MoonInfo }
     @forecast_time = options.fetch(:forecast_time) { Time.now }
     @units = options.fetch(:units) { 'si' } # or 'us' for Imperial units
   end
