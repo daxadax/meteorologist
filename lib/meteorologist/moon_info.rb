@@ -51,6 +51,10 @@ class MoonInfo
     end
   end
 
+  def in_sign
+    #MoonSignCalculator.calculate(date)
+  end
+
   def active_elements
     return []
     @active_elements ||= build_active_elements
